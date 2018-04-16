@@ -181,7 +181,7 @@ context.decodeBytes = function(s) {
     return fromCharCodes(out);
   };
 
-})((typeof module != "undefined" && module.exports) || (this && this.base32k = {}) || base32k);
+})((typeof module != "undefined" && module.exports) || this && (this.base32k = {}) || base32k);
 if (base32k) {
   export default base32k
 }
