@@ -1,6 +1,8 @@
 /** @preserve base32k.js / https://github.com/simonratner/base32k
  ** Copyright (C) 2012 Simon Ratner, distributed under the MIT license. */
-
+if (typeof module === "undefined" && !this) {
+  var base32k = {}
+}
 (function(context){
 
 /*
@@ -179,4 +181,7 @@ context.decodeBytes = function(s) {
     return fromCharCodes(out);
   };
 
-})((typeof module != "undefined" && module.exports) || (this.base32k = {}));
+})((typeof module != "undefined" && module.exports) || (this && this.base32k = {}) || base32k);
+if (base32k) {
+  export default base32k
+}
